@@ -85,16 +85,7 @@ public partial class WebPage2 : System.Web.UI.Page
 
     }
 
-    protected void ButtonDelete_Click(object sender, EventArgs e)
-    {
-        con.Open();
-        SqlCommand comm = new SqlCommand("delete Contacts_tab where Name = '"+TextBoxName.Text+"'",con);
-        comm.ExecuteNonQuery();
-        con.Close();
-        ScriptManager.RegisterStartupScript(this, this.GetType(), "script", "alert('Successfully deleted')", true);
-        LoadRecord();
-
-    }
+    
 
     protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
     {
@@ -119,5 +110,10 @@ public partial class WebPage2 : System.Web.UI.Page
             ButtonAddNew.Visible = false;
         }
         
+    }
+
+    protected void HiddenID_ValueChanged(object sender, EventArgs e)
+    {
+
     }
 }
